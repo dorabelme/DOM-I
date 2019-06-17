@@ -58,6 +58,7 @@ let header4 = document.querySelectorAll(".text-content h4");
 let paragraph = document.querySelectorAll(".text-content p");
 let contactHeader = document.querySelector(".contact h4");
 let contactP = document.querySelectorAll(".contact p");
+let footer = document.querySelector("footer p");
 
 console.log(contactHeader);
 console.log(contactP);
@@ -68,10 +69,6 @@ anchor[2].textContent = "Vision";
 anchor[3].textContent = "Features";
 anchor[4].textContent = "About";
 anchor[5].textContent = "Contact";
-
-navigation.style.width = "610px";
-navigation.style.justifyContent = "space-between";
-navigation.style.display = "flex";
 
 anchor.forEach(anchor => (anchor.style.decoration = "none"));
 anchor.forEach(anchor => (anchor.style.coror = "#b0b0b0"));
@@ -102,3 +99,5 @@ contactHeader.textContent = "Contact";
 contactP[0].innerHTML = "123 Way 456 Street<br>Somewhere, USA";
 contactP[1].textContent = "1 (888) 888-8888";
 contactP[2].textContent = "sales@greatidea.io";
+
+footer.textContent = "Copyright Great Idea! 2018";
