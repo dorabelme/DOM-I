@@ -46,21 +46,24 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
-let container = document.querySelector(".container");
-let header = document.querySelector("header");
+// let container = document.querySelector(".container");
+// let header = document.querySelector("header");
 let navigation = document.querySelector("nav");
 let anchor = document.querySelectorAll("a");
-let cta = document.querySelector("cta");
-let ctaText = document.querySelector("cta-text");
 let bigHeadline = document.querySelector(".cta-text h1");
 let button = document.querySelector("button");
 let headerImage = document.querySelector("#cta-img");
+let middleImage = document.querySelector(".middle-img");
 
-anchor[0].textContent = "Services";
-anchor[1].textContent = "Vision";
-anchor[2].textContent = "Features";
-anchor[3].textContent = "About";
-anchor[4].textContent = "Contact";
+anchor[1].textContent = "Product";
+anchor[2].textContent = "Vision";
+anchor[3].textContent = "Features";
+anchor[4].textContent = "About";
+anchor[5].textContent = "Contact";
+
+navigation.style.width = "610px";
+navigation.style.justifyContent = "space-between";
+navigation.style.display = "flex";
 
 anchor.forEach(anchor => (anchor.style.decoration = "none"));
 anchor.forEach(anchor => (anchor.style.coror = "#b0b0b0"));
@@ -68,3 +71,4 @@ anchor.forEach(anchor => (anchor.style.coror = "#b0b0b0"));
 bigHeadline.innerHTML = "DOM<br> Is<br> Awesome";
 button.textContent = "Get Started";
 headerImage.src = "./img/header-img.png";
+middleImage.src = "./img/mid-page-accent.jpg";
