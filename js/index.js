@@ -46,6 +46,7 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
+//Creating variables for later use
 // let container = document.querySelector(".container");
 // let header = document.querySelector("header");
 let navigation = document.querySelector("nav");
@@ -53,51 +54,62 @@ let anchor = document.querySelectorAll("a");
 let bigHeadline = document.querySelector(".cta-text h1");
 let button = document.querySelector("button");
 let headerImage = document.querySelector("#cta-img");
-let middleImage = document.querySelector(".middle-img");
+let middleImage = document.querySelector("#middle-img");
 let header4 = document.querySelectorAll(".text-content h4");
 let paragraph = document.querySelectorAll(".text-content p");
 let contactHeader = document.querySelector(".contact h4");
 let contactP = document.querySelectorAll(".contact p");
 let footer = document.querySelector("footer p");
 
-console.log(contactHeader);
-console.log(contactP);
+// Adding text to anchor
 
-anchor[0].textContent = "Services";
-anchor[1].textContent = "Product";
-anchor[2].textContent = "Vision";
-anchor[3].textContent = "Features";
-anchor[4].textContent = "About";
-anchor[5].textContent = "Contact";
+anchor[0].textContent = siteContent["nav"]["nav-item-1"];
+anchor[1].textContent = siteContent["nav"]["nav-item-2"];
+anchor[2].textContent = siteContent["nav"]["nav-item-3"];
+anchor[3].textContent = siteContent["nav"]["nav-item-4"];
+anchor[4].textContent = siteContent["nav"]["nav-item-5"];
+anchor[5].textContent = siteContent["nav"]["nav-item-6"];
 
-anchor.forEach(anchor => (anchor.style.decoration = "none"));
-anchor.forEach(anchor => (anchor.style.coror = "#b0b0b0"));
-
+// Adding text to cta section and images
 bigHeadline.innerHTML = "DOM<br> Is<br> Awesome";
-button.textContent = "Get Started";
-headerImage.src = "./img/header-img.png";
-middleImage.src = "./img/mid-page-accent.jpg";
+button.textContent = siteContent["cta"]["button"];
+headerImage.setAttribute("src", siteContent["cta"]["img-src"]);
+middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 
-header4[0].textContent = "Features";
-header4[1].textContent = "About";
-header4[2].textContent = "Services";
-header4[3].textContent = "Product";
-header4[4].textContent = "Vision";
+// Adding text to main section
+header4[0].textContent = siteContent["main-content"]["features-h4"];
+header4[1].textContent = siteContent["main-content"]["about-h4"];
+header4[2].textContent = siteContent["main-content"]["services-h4"];
+header4[3].textContent = siteContent["main-content"]["product-h4"];
+header4[4].textContent = siteContent["main-content"]["vision-h4"];
 
-paragraph[0].textContent =
-  "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-paragraph[1].textContent =
-  "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-paragraph[2].textContent =
-  "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-paragraph[3].textContent =
-  "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-paragraph[4].textContent =
-  "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+paragraph[0].textContent = siteContent["main-content"]["features-content"];
+paragraph[1].textContent = siteContent["main-content"]["about-content"];
+paragraph[2].textContent = siteContent["main-content"]["services-content"];
+paragraph[3].textContent = siteContent["main-content"]["product-content"];
+paragraph[4].textContent = siteContent["main-content"]["vision-content"];
 
-contactHeader.textContent = "Contact";
+// Adding text to contact part and footer
+contactHeader.textContent = siteContent["contact"]["contact-h4"];
 contactP[0].innerHTML = "123 Way 456 Street<br>Somewhere, USA";
-contactP[1].textContent = "1 (888) 888-8888";
-contactP[2].textContent = "sales@greatidea.io";
+contactP[1].textContent = siteContent["contact"]["phone"];
+contactP[2].textContent = siteContent["contact"]["email"];
+footer.textContent = siteContent["footer"]["copyright"];
 
-footer.textContent = "Copyright Great Idea! 2018";
+// Extra assignments
+const newAnchor = document.createElement("a");
+const newAnchor2 = document.createElement("a");
+const newNav = Array.from(anchor);
+newAnchor.textContent = "Log In";
+navigation.appendChild(newAnchor);
+newAnchor2.textContent = "Home";
+navigation.prepend(newAnchor2);
+const finalNav = newNav.concat(newAnchor).concat(newAnchor2);
+
+finalNav.forEach(anchor => (anchor.style.color = "white"));
+finalNav.forEach(anchor => (anchor.style.backgroundColor = "black"));
+finalNav.forEach(anchor => (anchor.style.padding = "10px 10px 10px 10px"));
+
+footer.style.backgroundColor = "black";
+footer.style.color = "white";
+footer.style.padding = "20px 0 20px 0";
