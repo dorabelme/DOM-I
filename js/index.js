@@ -62,7 +62,6 @@ let contactP = document.querySelectorAll(".contact p");
 let footer = document.querySelector("footer p");
 
 // Adding text to anchor
-
 anchor[0].textContent = siteContent["nav"]["nav-item-1"];
 anchor[1].textContent = siteContent["nav"]["nav-item-2"];
 anchor[2].textContent = siteContent["nav"]["nav-item-3"];
